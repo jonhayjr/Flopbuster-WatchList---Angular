@@ -1,0 +1,15 @@
+<div style="display:flex; justify-content:space-between"
+    class="text-light p-3 rounded mb-2"
+    [class.bg-success]="item.onSale"
+    [class.bg-dark]="!item.onSale"
+    >
+    <div>
+      <div>{{item.title}}</div>
+      <div>{{item.price | currency}} | {{ item.dateAdded | date:'longDate'}}</div>
+    </div>
+    <div>
+      <i class="material-icons" *ngIf="
+      !first" (click)="onClick(index, index - 1)">expand_less</i>
+      <i class="material-icons"*ngIf="!last" (click)="onClick(index, index + 1)">expand_more</i>
+    </div>
+  </div>

@@ -1,0 +1,7 @@
+<h4>Flopbuster Watch List</h4>
+
+<div *ngFor="let item of watchList | slice:0:numOfItemsToShow; index as i; first as f; last as l">
+  <my-watch-list-item [item]="item" [index]="i" [last]="l" [first]="f" (swapMovie) ="swapMovie($event)"></my-watch-list-item>
+</div>
+<button class="btn btn-primary" [hidden]="buttonHide" (click)="showAll()">Show All</button>
+
